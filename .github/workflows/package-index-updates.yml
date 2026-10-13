@@ -48,7 +48,7 @@ jobs:
       - name: Open or update the review pull request
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: automation/package-index-updates
+          branch: automation/auto-package-index-updates
           delete-branch: true
           title: "Update package index versions"
           body-path: ${{ runner.temp }}/package-updates.md
@@ -99,7 +99,7 @@ jobs:
       github.event_name == 'pull_request' &&
       github.event.action == 'closed' &&
       github.event.pull_request.merged == true &&
-      github.event.pull_request.head.ref == 'automation/package-index-updates' &&
+      github.event.pull_request.head.ref == 'automation/auto-package-index-updates' &&
       github.event.pull_request.head.repo.full_name == github.repository &&
       contains(github.event.pull_request.body, '<!-- macwave-package-index-updates -->')
     runs-on: ubuntu-latest
