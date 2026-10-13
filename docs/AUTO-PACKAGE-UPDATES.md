@@ -84,22 +84,28 @@ Unit tests cover version parsing, architecture keywords, ambiguous assets,
 versionless asset names, creating paired `arm64`/`amd64` records, release-note
 generation, and record validation.
 
-## Required repository secret
+## Required repository secrets
 
-Add a fine-grained personal access token as the `AUTOMATION_TOKEN` Actions
-secret in `MacWaveOrg/infosource`. The token needs:
+Create one personal access token (classic) with the **`repo`** scope and store
+it as two Actions secrets, both set to the same value:
 
-| Repository | Permission |
-| --- | --- |
-| `MacWaveOrg/infosource` | Contents: read and write |
-| `MacWaveOrg/infosource` | Pull requests: read and write |
-| `MacWaveOrg/MacWave` | Contents: read and write |
+| Secret | Repository | Used for |
+| --- | --- | --- |
+| `AUTOMATION_TOKEN` | `MacWaveOrg/infosource` | opening and updating the review PR |
+| `MACWAVE_RELEASE_TOKEN` | `MacWaveOrg/MacWave` | creating the release in MacWave |
 
-The token creates the review PR. A personal access token is used instead of
-the default `GITHUB_TOKEN` because GitHub suppresses workflow runs caused by
-events initiated with `GITHUB_TOKEN`; the PR validation and merge-triggered
-release would otherwise not run. The PR will be authored by the account that
-owns the token. Keep the token in repository secrets only; never commit it.
+The `repo` scope covers every repository the token's owner can write to; no
+other scope is needed, so do not add `workflow` or the broader `admin` scopes.
+A classic token is used because a fine-grained token only reaches
+organization-owned repositories once the organization allows fine-grained
+personal access tokens.
+
+A personal access token is used instead of the default `GITHUB_TOKEN` because
+GitHub suppresses workflow runs caused by events initiated with
+`GITHUB_TOKEN`; the PR validation and merge-triggered release would otherwise
+not run. The PR will be authored by the account that owns the token, so create
+it under the account that should own the automation PRs. Keep the token in
+repository secrets only; never commit it.
 
 If the secret is missing or lacks access, the workflow fails explicitly. The
 merge-triggered release uses the token to create the release in `MacWaveOrg/MacWave`.

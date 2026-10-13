@@ -54,15 +54,15 @@ asset to calculate one when GitHub does not provide a digest. Ambiguous assets,
 universal binaries, dependency-bearing packages, conda packages, custom mirrors,
 and releases with nonstandard version tags are left for manual review.
 
-To enable the automatic release after the PR is merged, add a
-`AUTOMATION_TOKEN` fine-grained personal access token as an Actions secret to
-this repository. Grant it Contents (read/write) and Pull requests (read/write)
-on `MacWaveOrg/infosource`, and Contents (read/write) on `MacWaveOrg/MacWave`.
-Using this token for the review PR is necessary for GitHub to run the PR checks
-and the post-merge release workflow. The PR author will be the token's account.
-The workflow fails explicitly if the secret is missing; it does not silently
-skip publishing. Automated Index Update releases are always created with
-`latest=false`.
+To enable the automatic release after the PR is merged, create one personal
+access token (classic) with the `repo` scope, then add it as the
+`AUTOMATION_TOKEN` secret in this repository and as the
+`MACWAVE_RELEASE_TOKEN` secret in `MacWaveOrg/MacWave`. A personal access token
+is required because the default `GITHUB_TOKEN` cannot trigger the PR checks or
+the post-merge release workflow. The PR author will be the token's account, so
+create it under the account that should own the automation PRs. The workflow
+fails explicitly if a secret is missing; it does not silently skip publishing.
+Automated Index Update releases are always created with `latest=false`.
 
 # 🌊 Install MacWave
 
