@@ -34,6 +34,36 @@ deps/depsinfo_{arch}/{name}/_{name}@{version}        url / sha256 / deps
 - `deps` lists one `name@version` per line, written as a quoted multi-line
   list. A package without a `deps` field has no dependencies.
 
+# 🌊 Automatic Package Updates
+
+The `Package index updates` GitHub Actions workflow checks daily for newer
+stable releases and can also be started manually from the Actions tab. For a
+safe match, it opens or updates a review pull request instead of publishing
+records directly. The PR is assigned to the repository maintainer; merging it
+creates a bilingual `Index Update` release in `MacWaveOrg/MacWave`.
+
+The updater currently handles packages whose recorded download URL points to
+a public GitHub Release, whose version is plain numeric, and whose current
+record has no dependency list. If the homepage is a GitHub repository, it must
+match the release repository; otherwise the repository in the existing download
+URL is used as the source. The updater recognizes architecture tokens in
+release asset filenames (`arm64`/`aarch64` and
+`amd64`/`x86_64`/`x86-64`/`x64`), then requires one exact filename-format match
+per architecture. It uses GitHub's SHA-256 asset digest, or downloads the
+asset to calculate one when GitHub does not provide a digest. Ambiguous assets,
+universal binaries, dependency-bearing packages, conda packages, custom mirrors,
+and releases with nonstandard version tags are left for manual review.
+
+To enable the automatic release after the PR is merged, add a
+`AUTOMATION_TOKEN` fine-grained personal access token as an Actions secret to
+this repository. Grant it Contents (read/write) and Pull requests (read/write)
+on `MacWaveOrg/infosource`, and Contents (read/write) on `MacWaveOrg/MacWave`.
+Using this token for the review PR is necessary for GitHub to run the PR checks
+and the post-merge release workflow. The PR author will be the token's account.
+The workflow fails explicitly if the secret is missing; it does not silently
+skip publishing. Automated Index Update releases are always created with
+`latest=false`.
+
 # 🌊 Install MacWave
 
 In the terminal, run:
