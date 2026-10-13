@@ -119,6 +119,67 @@ class PackageUpdateTests(unittest.TestCase):
         self.assertEqual(skipped, [])
         fetch.assert_called_once()
 
+    def test_one_failing_package_does_not_abort_the_run(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            (root / "pkg" / "pkginfo_amd64").mkdir(parents=True)
+            digest = "b" * 64
+            for name in ("broken", "fine"):
+                package_dir = root / "pkg" / "pkginfo_arm64" / name
+                package_dir.mkdir(parents=True)
+                (package_dir / f"_{name}@1.2.0").write_text(
+                    f'sha256: "{digest}"\n'
+                    f'url: "https://github.com/example/{name}/releases/download/v1.2.0/'
+                    f'{name}-1.2.0-macos-arm64.zip"\n',
+                    encoding="utf-8",
+                )
+                (package_dir / f"_{name}@common").write_text(
+                    f'hom: "https://github.com/example/{name}"\n', encoding="utf-8"
+                )
+
+            def fake_github_json(url: str) -> object:
+                if "/example/broken/" in url:
+                    raise RuntimeError("simulated transient failure")
+                return {
+                    "tag_name": "v1.3.0",
+                    "assets": [
+                        {
+                            "name": "fine-1.3.0-macos-arm64.zip",
+                            "digest": f"sha256:{'a' * 64}",
+                            "browser_download_url": (
+                                "https://github.com/example/fine/releases/download/"
+                                "v1.3.0/fine-1.3.0-macos-arm64.zip"
+                            ),
+                        }
+                    ],
+                }
+
+            with patch("check_package_updates.github_json", side_effect=fake_github_json):
+                updates, skipped = discover_updates(root)
+
+        self.assertEqual([(item["package"], item["version"]) for item in updates], [("fine", "1.3.0")])
+        self.assertEqual(len(skipped), 1)
+        self.assertIn("broken", skipped[0])
+        self.assertIn("simulated transient failure", skipped[0])
+
+    def test_a_total_api_outage_still_fails_loudly(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            (root / "pkg" / "pkginfo_amd64").mkdir(parents=True)
+            package_dir = root / "pkg" / "pkginfo_arm64" / "tool"
+            package_dir.mkdir(parents=True)
+            (package_dir / "_tool@1.2.0").write_text(
+                f'sha256: "{"b" * 64}"\n'
+                'url: "https://github.com/example/tool/releases/download/v1.2.0/tool-1.2.0-macos-arm64.zip"\n',
+                encoding="utf-8",
+            )
+            (package_dir / "_tool@common").write_text(
+                'hom: "https://github.com/example/tool"\n', encoding="utf-8"
+            )
+            with patch("check_package_updates.github_json", side_effect=RuntimeError("outage")):
+                with self.assertRaises(RuntimeError):
+                    discover_updates(root)
+
 
 class IndexReleaseNotesTests(unittest.TestCase):
     def test_metadata_records_are_not_versions(self):

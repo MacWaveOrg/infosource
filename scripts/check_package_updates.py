@@ -9,6 +9,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -18,6 +19,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ARCHES = ("arm64", "amd64")
 MAX_DOWNLOAD_SIZE = 512 * 1024 * 1024
+RETRY_ATTEMPTS = 3
+RETRY_DELAY_SECONDS = 5
 VERSION_TAG_PATTERNS = (
     re.compile(r"^v?(\d+(?:\.\d+){1,3})$", re.IGNORECASE),
     re.compile(r"^[A-Za-z][A-Za-z0-9_.-]*[-_]v?(\d+(?:\.\d+){1,3})$", re.IGNORECASE),
@@ -143,16 +146,23 @@ def github_json(url: str) -> object:
     if token:
         headers["Authorization"] = f"Bearer {token}"
     request = urllib.request.Request(url, headers=headers)
-    try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            return json.load(response)
-    except urllib.error.HTTPError as error:
-        if error.code == 404:
-            return None
-        body = error.read(500).decode("utf-8", errors="replace")
-        raise RuntimeError(f"GitHub API request failed ({error.code}) for {url}: {body}") from error
-    except urllib.error.URLError as error:
-        raise RuntimeError(f"GitHub API request failed for {url}: {error}") from error
+    for attempt in range(1, RETRY_ATTEMPTS + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as error:
+            if error.code == 404:
+                return None
+            body = error.read(500).decode("utf-8", errors="replace")
+            if error.code < 500 or attempt == RETRY_ATTEMPTS:
+                raise RuntimeError(
+                    f"GitHub API request failed ({error.code}) for {url}: {body}"
+                ) from error
+        except urllib.error.URLError as error:
+            if attempt == RETRY_ATTEMPTS:
+                raise RuntimeError(f"GitHub API request failed for {url}: {error}") from error
+        time.sleep(RETRY_DELAY_SECONDS * attempt)
+    raise RuntimeError(f"GitHub API request failed for {url}")
 
 
 def download_sha256(url: str) -> str:
@@ -216,6 +226,7 @@ def report_text(updates: list[dict[str, str]], skipped: list[str]) -> str:
 
 def discover_updates(root: Path) -> tuple[list[dict[str, str]], list[str]]:
     release_cache: dict[str, object] = {}
+    api_failures = 0
     planned: list[dict[str, str]] = []
     skipped: list[str] = []
 
@@ -252,19 +263,26 @@ def discover_updates(root: Path) -> tuple[list[dict[str, str]], list[str]]:
                 continue
 
             if release_repo not in release_cache:
-                release_cache[release_repo] = github_json(
-                    f"https://api.github.com/repos/{release_repo}/releases/latest"
-                )
+                try:
+                    release_cache[release_repo] = github_json(
+                        f"https://api.github.com/repos/{release_repo}/releases/latest"
+                    )
+                except RuntimeError as error:
+                    api_failures += 1
+                    skipped.append(f"`{package}` ({arch}): {error}")
+                    continue
             release = release_cache[release_repo]
             if release is None:
                 skipped.append(f"`{package}` ({arch}): upstream has no published stable GitHub Release")
                 continue
             if not isinstance(release, dict):
-                raise RuntimeError(f"unexpected GitHub Release response for {release_repo}")
+                skipped.append(f"`{package}` ({arch}): unexpected GitHub Release response for {release_repo}")
+                continue
             tag = release.get("tag_name")
             assets = release.get("assets")
             if not isinstance(tag, str) or not isinstance(assets, list):
-                raise RuntimeError(f"GitHub Release response is missing tag/assets for {release_repo}")
+                skipped.append(f"`{package}` ({arch}): GitHub Release response has no tag/assets for {release_repo}")
+                continue
             new_version = version_from_tag(tag)
             if new_version is None:
                 skipped.append(f"`{package}` ({arch}): release tag {tag!r} is not a plain numeric version")
@@ -281,16 +299,22 @@ def discover_updates(root: Path) -> tuple[list[dict[str, str]], list[str]]:
                 continue
             url = asset.get("browser_download_url")
             if not isinstance(url, str):
-                raise RuntimeError(f"GitHub Release asset has no browser download URL: {asset.get('name')}")
+                skipped.append(f"`{package}` ({arch}) {new_version}: asset has no browser download URL")
+                continue
             parsed_url = urllib.parse.urlparse(url)
             if parsed_url.scheme != "https" or parsed_url.hostname != "github.com":
-                raise RuntimeError(f"refusing a GitHub Release asset with an unexpected URL: {url}")
+                skipped.append(f"`{package}` ({arch}) {new_version}: asset URL is not a github.com release URL")
+                continue
 
             version_path = package_dir / f"_{package}@{new_version}"
             if version_path.exists():
                 skipped.append(f"`{package}@{new_version}` ({arch}): version record already exists")
                 continue
-            digest = asset_sha256(asset, url)
+            try:
+                digest = asset_sha256(asset, url)
+            except RuntimeError as error:
+                skipped.append(f"`{package}` ({arch}) {new_version}: {error}")
+                continue
             planned.append(
                 {
                     "package": package,
@@ -303,6 +327,10 @@ def discover_updates(root: Path) -> tuple[list[dict[str, str]], list[str]]:
                 }
             )
 
+    if api_failures and not release_cache:
+        raise RuntimeError(
+            f"every GitHub API request failed ({api_failures}); check the token and the network"
+        )
     return planned, skipped
 
 

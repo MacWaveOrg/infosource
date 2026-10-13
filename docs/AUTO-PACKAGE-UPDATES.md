@@ -55,6 +55,11 @@ workflow includes skip reasons in the run summary. When only one architecture
 has an unambiguous matching asset, only that architecture is proposed; inspect
 the PR's changed paths before merging.
 
+A failing or transient GitHub API call is retried a few times and then skips
+only the affected packages, recording the reason, so one bad upstream cannot
+abort the whole run. The run fails outright only when every request fails,
+which points at a broken token or network rather than one flaky package.
+
 ## Checksums and validation
 
 For each matching asset, the updater uses GitHub's release asset `sha256`
