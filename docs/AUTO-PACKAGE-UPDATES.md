@@ -12,7 +12,7 @@ Run workflow**. It never writes to `main` directly:
    SHA-256 digest, calculates the checksum, writes new version records on a
    dedicated branch, and validates those records.
 3. `peter-evans/create-pull-request` opens or updates
-   `automation/package-index-updates` and requests review from
+   `automation/auto-package-index-updates` and requests review from
    `Sha0huaZhang`.
 4. CI validates changes in the pull request. A maintainer reviews and merges
    the PR.
