@@ -9,6 +9,7 @@ from collections import defaultdict
 
 
 PATH_RE = re.compile(r"^pkg/pkginfo_(?:arm64|amd64)/([^/]+)/_[^@]+@(.+)$")
+METADATA_SUFFIX = "@common"
 
 
 def version_sort(version: str) -> tuple[tuple[int, ...], str]:
@@ -20,7 +21,10 @@ def version_sort(version: str) -> tuple[tuple[int, ...], str]:
 def release_notes(paths: list[str]) -> str:
     packages: dict[str, set[str]] = defaultdict(set)
     for path in paths:
-        match = PATH_RE.fullmatch(path.strip())
+        stripped = path.strip()
+        if stripped.endswith(METADATA_SUFFIX):
+            continue
+        match = PATH_RE.fullmatch(stripped)
         if match:
             package, version = match.groups()
             packages[package].add(version)

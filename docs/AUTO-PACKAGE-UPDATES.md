@@ -67,11 +67,17 @@ The record validator checks that:
 - the record filename matches its package directory and architecture;
 - SHA-256 is exactly 64 lowercase hexadecimal characters;
 - the URL uses HTTPS; and
-- the asset filename explicitly identifies the architecture encoded by the
-  record's path.
+- the architecture the URL identifies — in the asset filename or in the mirror
+  path (`osx-arm64` / `osx-64`, as conda-forge names it) — is the one encoded
+  by the record's path. A URL that identifies no architecture at all is
+  accepted.
+
+`@common` metadata files and the deliberately malformed `test_*` fixture
+packages are not version records, so the validator skips both.
 
 Unit tests cover version parsing, architecture keywords, ambiguous assets,
-versionless asset names, and creating paired `arm64`/`amd64` records.
+versionless asset names, creating paired `arm64`/`amd64` records, release-note
+generation, and record validation.
 
 ## Required repository secret
 

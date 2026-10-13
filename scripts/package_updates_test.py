@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
+import os
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+from build_index_release import release_notes
 from check_package_updates import (
     classify_arch,
     discover_updates,
@@ -13,6 +15,7 @@ from check_package_updates import (
     version_from_tag,
     version_tuple,
 )
+from validate_update_records import validate
 
 
 class PackageUpdateTests(unittest.TestCase):
@@ -115,6 +118,75 @@ class PackageUpdateTests(unittest.TestCase):
         )
         self.assertEqual(skipped, [])
         fetch.assert_called_once()
+
+
+class IndexReleaseNotesTests(unittest.TestCase):
+    def test_metadata_records_are_not_versions(self):
+        notes = release_notes(
+            [
+                "pkg/pkginfo_arm64/tool/_tool@1.3.0",
+                "pkg/pkginfo_amd64/tool/_tool@1.3.0",
+                "pkg/pkginfo_arm64/tool/_tool@common",
+                "README.md",
+            ]
+        )
+        self.assertIn("`tool (1.3.0)`", notes)
+        self.assertNotIn("common", notes)
+
+    def test_notes_are_bilingual(self):
+        notes = release_notes(["pkg/pkginfo_arm64/jq/_jq@1.9.0"])
+        self.assertIn("Index Update", notes)
+        self.assertIn("增加软件包的新版本", notes)
+
+    def test_only_metadata_paths_are_an_error(self):
+        with self.assertRaises(ValueError):
+            release_notes(["pkg/pkginfo_arm64/tool/_tool@common"])
+
+
+class UpdateRecordValidationTests(unittest.TestCase):
+    def setUp(self):
+        self._previous_directory = os.getcwd()
+        self._temporary_directory = tempfile.TemporaryDirectory()
+        os.chdir(self._temporary_directory.name)
+
+    def tearDown(self):
+        os.chdir(self._previous_directory)
+        self._temporary_directory.cleanup()
+
+    def write_record(self, relative: str, text: str) -> Path:
+        path = Path(relative)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        return path
+
+    def test_metadata_records_are_not_version_records(self):
+        path = self.write_record(
+            "pkg/pkginfo_arm64/tool/_tool@common", 'hom: "https://example.com"\n'
+        )
+        self.assertEqual(validate(path), [])
+
+    def test_fixture_packages_are_not_validated(self):
+        path = self.write_record(
+            "pkg/pkginfo_arm64/test_no_sha256/_test_no_sha256@1.0.0",
+            'url: "https://raw.githubusercontent.com/MacWaveOrg/MacWave/main/test_no_sha256"\n',
+        )
+        self.assertEqual(validate(path), [])
+
+    def test_conda_style_architecture_in_the_url_path_is_accepted(self):
+        path = self.write_record(
+            "pkg/pkginfo_amd64/tree/_tree@2.2.1",
+            f'sha256: "{"a" * 64}"\n'
+            'url: "https://conda.anaconda.org/conda-forge/osx-64/tree-2.2.1-h6e16a3a_0.conda"\n',
+        )
+        self.assertEqual(validate(path), [])
+
+    def test_contradictory_architecture_is_rejected(self):
+        path = self.write_record(
+            "pkg/pkginfo_amd64/tool/_tool@1.3.0",
+            f'sha256: "{"b" * 64}"\n'
+            'url: "https://github.com/example/tool/releases/download/v1.3.0/tool-macos-arm64.zip"\n',
+        )
+        self.assertTrue(validate(path))
 
 
 if __name__ == "__main__":
