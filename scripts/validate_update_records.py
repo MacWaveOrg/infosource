@@ -8,19 +8,42 @@ import sys
 import urllib.parse
 from pathlib import Path
 
-from check_package_updates import SHA256_RE, classify_arch
+from check_package_updates import ARCH_PATTERNS, SHA256_RE
 
 
 RECORD_RE = re.compile(r"^pkg/pkginfo_(arm64|amd64)/([^/]+)/_([^@]+)@(.+)$")
+METADATA_SUFFIX = "@common"
+# Fixture packages under test_* are deliberately malformed; the updater skips
+# them as well.
+TEST_PACKAGE_PREFIX = "test_"
+
+# conda and continuum mirror URLs name the Intel build "osx-64", which the
+# shared asset-name patterns do not recognise.
+MIRROR_ARCH_PATTERNS = (
+    ("arm64", re.compile(r"(?<![A-Za-z0-9])osx-arm64(?![A-Za-z0-9])", re.IGNORECASE)),
+    ("amd64", re.compile(r"(?<![A-Za-z0-9])osx-64(?![A-Za-z0-9])", re.IGNORECASE)),
+)
+
+
+def url_arch(url: str) -> str | None:
+    """Architecture the download URL declares, or None when it declares none."""
+    text = urllib.parse.unquote(urllib.parse.urlparse(url).path)
+    declared = {arch for arch, pattern in ARCH_PATTERNS.items() if pattern.search(text)}
+    declared |= {arch for arch, pattern in MIRROR_ARCH_PATTERNS if pattern.search(text)}
+    return declared.pop() if len(declared) == 1 else None
 
 
 def validate(path: Path) -> list[str]:
+    if path.name.endswith(METADATA_SUFFIX):
+        return []
     relative = path.as_posix()
     match = RECORD_RE.fullmatch(relative)
     if match is None:
         return [f"{relative}: not a package version record"]
 
     arch, directory_name, record_name, version = match.groups()
+    if directory_name.startswith(TEST_PACKAGE_PREFIX):
+        return []
     errors: list[str] = []
     if directory_name != record_name:
         errors.append(f"{relative}: package directory and record name do not match")
@@ -39,8 +62,12 @@ def validate(path: Path) -> list[str]:
     parsed = urllib.parse.urlparse(url)
     if parsed.scheme != "https" or not parsed.hostname:
         errors.append(f"{relative}: URL must be HTTPS")
-    elif classify_arch(Path(urllib.parse.unquote(parsed.path)).name) != arch:
-        errors.append(f"{relative}: URL filename does not identify the {arch} architecture")
+    else:
+        declared = url_arch(url)
+        if declared is not None and declared != arch:
+            errors.append(
+                f"{relative}: URL identifies the {declared} architecture but the record is {arch}"
+            )
     return errors
 
 
