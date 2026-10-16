@@ -155,6 +155,6 @@ jobs:
           gh release create "$tag" \
             --repo MacWaveOrg/MacWave \
             --target main \
-            --title "Index Update-${tag}" \
+            --title "Index Update-${tag#index}" \
             --notes-file "$RUNNER_TEMP/release-notes.md" \
             --latest=false
