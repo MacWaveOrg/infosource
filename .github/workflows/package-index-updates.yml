@@ -53,7 +53,9 @@ jobs:
           title: "Update package index versions"
           body-path: ${{ runner.temp }}/package-updates.md
           commit-message: "Update package index versions"
-          reviewers: Sha0huaZhang
+          # The PR author is the token owner, and GitHub rejects a review
+          # request aimed at the PR author, so assign it instead.
+          assignees: Sha0huaZhang
           token: ${{ secrets.AUTOMATION_TOKEN }}
 
   validate:

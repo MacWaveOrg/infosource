@@ -12,8 +12,10 @@ Run workflow**. It never writes to `main` directly:
    SHA-256 digest, calculates the checksum, writes new version records on a
    dedicated branch, and validates those records.
 3. `peter-evans/create-pull-request` opens or updates
-   `automation/auto-package-index-updates` and requests review from
-   `Sha0huaZhang`.
+   `automation/auto-package-index-updates` and assigns it to `Sha0huaZhang`.
+   It assigns rather than requests a review because the pull request is
+   authored by the token's account, and GitHub rejects a review request aimed
+   at the author.
 4. CI validates changes in the pull request. A maintainer reviews and merges
    the PR.
 5. The merge event creates a bilingual `Index Update` release in
