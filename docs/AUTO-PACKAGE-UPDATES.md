@@ -87,12 +87,17 @@ generation, and record validation.
 ## Required repository secrets
 
 Create one personal access token (classic) with the **`repo`** scope and store
-it as two Actions secrets, both set to the same value:
+it as two Actions secrets in `MacWaveOrg/infosource`, both set to the same
+value:
 
-| Secret | Repository | Used for |
-| --- | --- | --- |
-| `AUTOMATION_TOKEN` | `MacWaveOrg/infosource` | opening and updating the review PR |
-| `MACWAVE_RELEASE_TOKEN` | `MacWaveOrg/MacWave` | creating the release in MacWave |
+| Secret | Used for |
+| --- | --- |
+| `AUTOMATION_TOKEN` | pushing the automation branch and opening or updating the review PR |
+| `MACWAVE_RELEASE_TOKEN` | creating the Index Update release in `MacWaveOrg/MacWave` |
+
+Both secrets belong to `MacWaveOrg/infosource`, because that is where this
+workflow runs and where GitHub resolves `secrets.*`. The release secret is
+named after the repository it publishes to, not the one that stores it.
 
 The `repo` scope covers every repository the token's owner can write to; no
 other scope is needed, so do not add `workflow` or the broader `admin` scopes.
