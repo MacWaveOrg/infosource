@@ -1,0 +1,5 @@
+des: "batt - control and limit battery charging on Apple Silicon MacBooks"
+hom: "https://github.com/charlie0129/batt"
+lic: "GPL-2.0"
+aut: "charlie0129"
+bin_name: "batt"
