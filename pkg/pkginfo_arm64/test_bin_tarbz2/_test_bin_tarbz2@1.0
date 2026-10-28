@@ -1,2 +1,3 @@
 sha256: "724c3d5f1e4ec94cca5db1278c857800bfa73513d924fecfabe268bcfebffe0e"
+file: "test_bin.tar.bz2"
 url: "https://github.com/MacWaveOrg/pkgtest/releases/download/1.0/test_bin.tar.bz2"

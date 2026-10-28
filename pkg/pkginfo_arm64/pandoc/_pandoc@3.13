@@ -1,2 +1,3 @@
 sha256: "f436d18bebbfb3ddd326597686dacab9fac5dc23bd060495020f35a28a43a7c3"
+file: "pandoc-3.13-arm64-macOS.zip"
 url: "https://github.com/jgm/pandoc/releases/download/3.13/pandoc-3.13-arm64-macOS.zip"
