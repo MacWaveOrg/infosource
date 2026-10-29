@@ -1,2 +1,3 @@
 sha256: "aea7d3f2e32371b7644a6e2ec8d4f26820a0e3965918cce8a46cef3e947f6291"
+file: "ollama-darwin.tgz"
 url: "https://github.com/ollama/ollama/releases/download/v0.40.11/ollama-darwin.tgz"

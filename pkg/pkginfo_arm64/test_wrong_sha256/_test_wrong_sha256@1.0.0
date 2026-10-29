@@ -1,2 +1,3 @@
 sha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+file: "test_wrong_sha256"
 url: "https://raw.githubusercontent.com/MacWaveOrg/MacWave/main/test/test_wrong_sha256"

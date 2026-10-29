@@ -1,2 +1,3 @@
 sha256: "41b77755d634d9c1355093edaf914920864a72051ecde1e060179df28935cee8"
+file: "taskwarrior-tui-aarch64-apple-darwin.tar.gz"
 url: "https://github.com/kdheepak/taskwarrior-tui/releases/download/v0.26.12/taskwarrior-tui-aarch64-apple-darwin.tar.gz"

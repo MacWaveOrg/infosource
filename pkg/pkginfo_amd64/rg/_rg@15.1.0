@@ -1,2 +1,3 @@
 sha256: "64811cb24e77cac3057d6c40b63ac9becf9082eedd54ca411b475b755d334882"
+file: "ripgrep-15.1.0-x86_64-apple-darwin.tar.gz"
 url: "https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-apple-darwin.tar.gz"
