@@ -1,4 +1,4 @@
-bin_name: "ChOma"
+bin_name: "choma"
 des: "Code signature and Mach-O manipulation tool by opa334"
 hom: "https://github.com/opa334/ChOma"
 lic: "MIT"
