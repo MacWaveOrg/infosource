@@ -1,3 +1,3 @@
-sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+sha256: "f58d0b90993fadfa122a351428c469ce24afef3865f027f0e6e86f0830d088f1"
 file: "hyperfine-v1.20.0-x86_64-apple-darwin.tar.gz"
 url: "https://github.com/sharkdp/hyperfine/releases/download/v1.20.0/hyperfine-v1.20.0-x86_64-apple-darwin.tar.gz"

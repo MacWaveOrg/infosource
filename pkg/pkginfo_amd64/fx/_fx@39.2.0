@@ -1,3 +1,3 @@
-sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+sha256: "2ad7d0a6e1ea67ab10a22cc06825fdc776511e8f412926d1c752b630eac12e02"
 file: "fx_darwin_amd64"
 url: "https://github.com/antonmedv/fx/releases/download/39.2.0/fx_darwin_amd64"
