@@ -1,0 +1,5 @@
+des: "A syntax-highlighting pager for git, diff, grep, rg --json, and blame output"
+hom: "https://dandavison.github.io/delta/"
+lic: "MIT"
+aut: "dandavison"
+bin_name: "delta"

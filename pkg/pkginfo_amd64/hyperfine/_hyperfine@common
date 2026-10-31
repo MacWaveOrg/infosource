@@ -1,0 +1,5 @@
+des: "A command-line benchmarking tool"
+hom: "https://github.com/sharkdp/hyperfine"
+lic: "Apache-2.0"
+aut: "sharkdp"
+bin_name: "hyperfine"

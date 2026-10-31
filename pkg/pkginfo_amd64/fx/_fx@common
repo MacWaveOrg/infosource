@@ -1,0 +1,5 @@
+des: "Terminal JSON viewer & processor"
+hom: "https://fx.wtf"
+lic: "MIT"
+aut: "antonmedv"
+bin_name: "fx"

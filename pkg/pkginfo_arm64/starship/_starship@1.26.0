@@ -1,0 +1,3 @@
+sha256: "c40b27b11f580411e068f2fa6c1be7830a387c0bc47a94d1d37f32b054c5361d"
+file: "starship-aarch64-apple-darwin.tar.gz"
+url: "https://github.com/starship/starship/releases/download/v1.26.0/starship-aarch64-apple-darwin.tar.gz"

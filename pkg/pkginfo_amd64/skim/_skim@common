@@ -1,0 +1,5 @@
+des: "Fuzzy Finder in rust!"
+hom: "https://github.com/skim-rs/skim"
+lic: "MIT"
+aut: "skim-rs"
+bin_name: "sk"
