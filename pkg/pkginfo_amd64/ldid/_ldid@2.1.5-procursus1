@@ -1,3 +1,4 @@
 sha256: "5812b21a378aa5de12e3738ef0b590dee4075821ca79eb2ac14ee59ad4eb4f61"
 file: "ldid_macos_x86_64"
 url: "https://github.com/ProcursusTeam/ldid/releases/download/v2.1.5-procursus1/ldid_macos_x86_64"
+min_os: "10.13"

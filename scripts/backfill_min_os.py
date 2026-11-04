@@ -50,14 +50,23 @@ def macho_min_os(path):
     if done.returncode != 0:
         return None
 
+    # 两种写法都要认：
+    #   LC_BUILD_VERSION      → minos 10.13      （较新的工具链）
+    #   LC_VERSION_MIN_MACOSX → version 10.13    （老的，btop@1.4.5 这类）
+    # 只认前者的话，一批老产物的 min_os 会全部提取不到。
     lines = done.stdout.splitlines()
     for index, line in enumerate(lines):
-        if "LC_BUILD_VERSION" not in line:
-            continue
-        for following in lines[index:index + 8]:
-            stripped = following.strip()
-            if stripped.startswith("minos "):
-                return stripped.split()[1]
+        command = line.strip()
+        if command == "cmd LC_BUILD_VERSION":
+            for following in lines[index:index + 8]:
+                field = following.strip()
+                if field.startswith("minos "):
+                    return field.split()[1]
+        elif command == "cmd LC_VERSION_MIN_MACOSX":
+            for following in lines[index:index + 8]:
+                field = following.strip()
+                if field.startswith("version "):
+                    return field.split()[1]
     return None
 
 
