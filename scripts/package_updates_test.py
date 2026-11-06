@@ -119,6 +119,42 @@ class PackageUpdateTests(unittest.TestCase):
         self.assertEqual(skipped, [])
         fetch.assert_called_once()
 
+    def test_new_records_carry_the_upstream_file_name(self):
+        # 4.0 的客户端靠 file 决定落盘名与解压方式：少了它，记录能进索引，
+        # 但客户端会在 resolve_payload 处直接拒绝安装。
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            digest = "a" * 64
+            (root / "pkg" / "pkginfo_amd64").mkdir(parents=True)
+            package_dir = root / "pkg" / "pkginfo_arm64" / "tool"
+            package_dir.mkdir(parents=True)
+            (package_dir / "_tool@1.2.0").write_text(
+                f'sha256: "{"b" * 64}"\n'
+                'url: "https://github.com/example/tool/releases/download/v1.2.0/tool-1.2.0-macos-arm64.zip"\n',
+                encoding="utf-8",
+            )
+            (package_dir / "_tool@common").write_text(
+                'hom: "https://github.com/example/tool"\n', encoding="utf-8"
+            )
+            release = {
+                "tag_name": "v1.3.0",
+                "assets": [
+                    {
+                        "name": "tool-1.3.0-macos-arm64.zip",
+                        "digest": f"sha256:{digest}",
+                        "browser_download_url": (
+                            "https://github.com/example/tool/releases/download/"
+                            "v1.3.0/tool-1.3.0-macos-arm64.zip"
+                        ),
+                    }
+                ],
+            }
+            with patch("check_package_updates.github_json", return_value=release):
+                updates, _ = discover_updates(root)
+
+        self.assertEqual(len(updates), 1)
+        self.assertIn('file: "tool-1.3.0-macos-arm64.zip"', updates[0]["content"])
+
     def test_one_failing_package_does_not_abort_the_run(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory)
@@ -237,14 +273,27 @@ class UpdateRecordValidationTests(unittest.TestCase):
         path = self.write_record(
             "pkg/pkginfo_amd64/tree/_tree@2.2.1",
             f'sha256: "{"a" * 64}"\n'
+            'file: "tree-2.2.1-h6e16a3a_0.conda"\n'
             'url: "https://conda.anaconda.org/conda-forge/osx-64/tree-2.2.1-h6e16a3a_0.conda"\n',
         )
         self.assertEqual(validate(path), [])
+
+    def test_records_without_a_file_field_are_rejected(self):
+        # 这类记录装不上，但索引里看着完全正常 —— 只能在这里拦。
+        path = self.write_record(
+            "pkg/pkginfo_arm64/tool/_tool@1.3.0",
+            f'sha256: "{"c" * 64}"\n'
+            'url: "https://github.com/example/tool/releases/download/v1.3.0/tool-macos-arm64.zip"\n',
+        )
+        errors = validate(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("missing the file field", errors[0])
 
     def test_contradictory_architecture_is_rejected(self):
         path = self.write_record(
             "pkg/pkginfo_amd64/tool/_tool@1.3.0",
             f'sha256: "{"b" * 64}"\n'
+            'file: "tool-macos-arm64.zip"\n'
             'url: "https://github.com/example/tool/releases/download/v1.3.0/tool-macos-arm64.zip"\n',
         )
         self.assertTrue(validate(path))

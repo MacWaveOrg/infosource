@@ -68,6 +68,10 @@ def validate(path: Path) -> list[str]:
             errors.append(
                 f"{relative}: URL identifies the {declared} architecture but the record is {arch}"
             )
+    # 4.0 的客户端按 file 决定落盘名与解压方式，缺了它安装一定失败 —— 记录能在索引里
+    # 存在，却谁都装不上（client 会报 "No file field for <name>@<version>"）。
+    if not fields.get("file"):
+        errors.append(f"{relative}: missing the file field")
     return errors
 
 
