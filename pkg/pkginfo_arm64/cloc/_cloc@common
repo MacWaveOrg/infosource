@@ -1,0 +1,5 @@
+des: "cloc - count, and compute differences of, lines of source code and comments"
+hom: "https://github.com/AlDanial/cloc"
+lic: "GPL-2.0"
+aut: "Al Danial"
+bin_name: "cloc"
