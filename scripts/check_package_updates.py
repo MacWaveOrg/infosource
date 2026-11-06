@@ -301,6 +301,10 @@ def discover_updates(root: Path) -> tuple[list[dict[str, str]], list[str]]:
             if not isinstance(url, str):
                 skipped.append(f"`{package}` ({arch}) {new_version}: asset has no browser download URL")
                 continue
+            asset_name = asset.get("name")
+            if not isinstance(asset_name, str) or not asset_name:
+                skipped.append(f"`{package}` ({arch}) {new_version}: asset has no name")
+                continue
             parsed_url = urllib.parse.urlparse(url)
             if parsed_url.scheme != "https" or parsed_url.hostname != "github.com":
                 skipped.append(f"`{package}` ({arch}) {new_version}: asset URL is not a github.com release URL")
@@ -321,7 +325,9 @@ def discover_updates(root: Path) -> tuple[list[dict[str, str]], list[str]]:
                     "version": new_version,
                     "arch": arch,
                     "path": str(version_path.relative_to(root)),
-                    "content": f'sha256: "{digest}"\nurl: "{url}"\n',
+                    # file 不能省：4.0 的客户端按它决定落盘名与解压方式，
+                    # 缺了它 resolve_payload 直接拒绝安装（见 docs/DATA-LAYER.md）。
+                    "content": f'sha256: "{digest}"\nfile: "{asset_name}"\nurl: "{url}"\n',
                     "url": url,
                     "sha256": digest,
                 }
