@@ -1,0 +1,4 @@
+sha256: "eeea60579f15f8bc86e9efa8a60df89e8286314bc03a5bdf695d2330ae229c9f"
+file: "k9s_Darwin_arm64.tar.gz"
+url: "https://github.com/derailed/k9s/releases/download/v0.40.10/k9s_Darwin_arm64.tar.gz"
+min_os: "11.0"

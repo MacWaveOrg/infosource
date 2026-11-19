@@ -1,0 +1,5 @@
+des: "Faster way to switch between clusters and namespaces in kubectl"
+hom: "https://kubectx.dev"
+lic: "Apache-2.0"
+aut: "ahmetb"
+bin_name: "kubectx"

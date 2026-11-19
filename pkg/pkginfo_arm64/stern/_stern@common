@@ -1,0 +1,5 @@
+des: "Multi pod and container log tailing for Kubernetes"
+hom: "https://github.com/stern/stern"
+lic: "Apache-2.0"
+aut: "stern"
+bin_name: "stern"

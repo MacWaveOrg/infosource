@@ -1,0 +1,4 @@
+sha256: "951ba00a33ea09b9e64c8ab7b71443b9be4d65f6f6c91b184fbec6d684d9dd0a"
+file: "stern_1.35.0_darwin_arm64.tar.gz"
+url: "https://github.com/stern/stern/releases/download/v1.35.0/stern_1.35.0_darwin_arm64.tar.gz"
+min_os: "13.0"

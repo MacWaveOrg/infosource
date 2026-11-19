@@ -1,0 +1,5 @@
+des: "A shell parser, formatter, and interpreter (shfmt)"
+hom: "https://mvdan.cc/sh"
+lic: "BSD-3-Clause"
+aut: "mvdan"
+bin_name: "shfmt"

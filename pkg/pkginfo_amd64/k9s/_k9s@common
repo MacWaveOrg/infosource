@@ -1,0 +1,5 @@
+des: "A terminal UI to interact with your Kubernetes clusters"
+hom: "https://k9scli.io"
+lic: "Apache-2.0"
+aut: "derailed"
+bin_name: "k9s"

@@ -1,0 +1,4 @@
+sha256: "80097893b478c55be51ffe826c172f0fd5095d23cca02adbcbcabc412700a689"
+file: "kubectx_v0.11.0_darwin_x86_64.tar.gz"
+url: "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubectx_v0.11.0_darwin_x86_64.tar.gz"
+min_os: "12.0"
