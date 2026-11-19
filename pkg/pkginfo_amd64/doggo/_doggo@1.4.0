@@ -1,0 +1,4 @@
+sha256: "cd2aa6ead10feff313d7afd52bccc6b9db80414132fab9702f279b2b5f686900"
+file: "doggo-darwin-x86_64.tar.gz"
+url: "https://github.com/mr-karan/doggo/releases/download/v1.4.0/doggo-darwin-x86_64.tar.gz"
+min_os: "12.0"

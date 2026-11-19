@@ -1,0 +1,4 @@
+sha256: "c9d9a71234bc0955fdba6da93cc9375f8793ec1e1cbce77a91014d536a969148"
+file: "restic_0.19.0_darwin_amd64.bz2"
+url: "https://github.com/restic/restic/releases/download/v0.19.0/restic_0.19.0_darwin_amd64.bz2"
+min_os: "12.0"

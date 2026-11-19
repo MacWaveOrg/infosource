@@ -1,0 +1,5 @@
+des: "A command-line client for WebSockets"
+hom: "https://github.com/vi/websocat"
+lic: "MIT"
+aut: "vi"
+bin_name: "websocat"

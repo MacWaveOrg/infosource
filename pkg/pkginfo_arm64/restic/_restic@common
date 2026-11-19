@@ -1,0 +1,5 @@
+des: "Fast, secure, efficient backup program"
+hom: "https://restic.net"
+lic: "BSD-2-Clause"
+aut: "restic"
+bin_name: "restic"

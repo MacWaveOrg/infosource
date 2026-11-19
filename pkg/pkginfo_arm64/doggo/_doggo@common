@@ -1,0 +1,5 @@
+des: "A command-line DNS client for humans"
+hom: "https://doggo.mrkaran.dev"
+lic: "GPL-3.0"
+aut: "mr-karan"
+bin_name: "doggo"

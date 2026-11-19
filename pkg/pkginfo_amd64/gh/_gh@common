@@ -1,0 +1,5 @@
+des: "GitHub's official command line tool"
+hom: "https://cli.github.com"
+lic: "MIT"
+aut: "cli"
+bin_name: "gh"

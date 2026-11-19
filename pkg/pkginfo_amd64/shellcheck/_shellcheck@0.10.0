@@ -1,0 +1,4 @@
+sha256: "ef27684f23279d112d8ad84e0823642e43f838993bbb8c0963db9b58a90464c2"
+file: "shellcheck-v0.10.0.darwin.x86_64.tar.xz"
+url: "https://github.com/koalaman/shellcheck/releases/download/v0.10.0/shellcheck-v0.10.0.darwin.x86_64.tar.xz"
+min_os: "10.9"

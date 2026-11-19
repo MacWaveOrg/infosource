@@ -1,0 +1,5 @@
+des: "rsync for cloud storage"
+hom: "https://rclone.org"
+lic: "MIT"
+aut: "rclone"
+bin_name: "rclone"

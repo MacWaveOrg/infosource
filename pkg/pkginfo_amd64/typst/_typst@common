@@ -1,0 +1,5 @@
+des: "A markup-based typesetting system"
+hom: "https://typst.app"
+lic: "Apache-2.0"
+aut: "typst"
+bin_name: "typst"

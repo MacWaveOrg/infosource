@@ -1,0 +1,4 @@
+sha256: "b251ab2bcd4cd8ba9e56ff37698c033ebf38582b477d21ebd86586d927cf87e7"
+file: "gitleaks_8.30.0_darwin_arm64.tar.gz"
+url: "https://github.com/gitleaks/gitleaks/releases/download/v8.30.0/gitleaks_8.30.0_darwin_arm64.tar.gz"
+min_os: "12.0"

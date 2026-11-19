@@ -1,0 +1,4 @@
+sha256: "b911b90622e686d44bc072112898584a601ed8353276b735835d8cdbcc27f660"
+file: "glow_3.0.0_Darwin_x86_64.tar.gz"
+url: "https://github.com/charmbracelet/glow/releases/download/v3.0.0/glow_3.0.0_Darwin_x86_64.tar.gz"
+min_os: "12.0"

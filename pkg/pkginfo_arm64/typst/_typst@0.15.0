@@ -1,0 +1,4 @@
+sha256: "fe53838737abf93a774495952a1a797b4686e9c4a21c2d99b9fdf77f46cc3572"
+file: "typst-aarch64-apple-darwin.tar.xz"
+url: "https://github.com/typst/typst/releases/download/v0.15.0/typst-aarch64-apple-darwin.tar.xz"
+min_os: "11.0"

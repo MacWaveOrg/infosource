@@ -1,0 +1,4 @@
+sha256: "2c84822203a57dfbf13c39dd8f3d792c5e693fa69c7b7adfa739fda4fc41207b"
+file: "websocat.aarch64-apple-darwin"
+url: "https://github.com/vi/websocat/releases/download/v1.14.0/websocat.aarch64-apple-darwin"
+min_os: "11.7.1"

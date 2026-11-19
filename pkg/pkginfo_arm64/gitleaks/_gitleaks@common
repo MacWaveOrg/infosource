@@ -1,0 +1,5 @@
+des: "Find secrets with Gitleaks"
+hom: "https://gitleaks.io"
+lic: "MIT"
+aut: "gitleaks"
+bin_name: "gitleaks"

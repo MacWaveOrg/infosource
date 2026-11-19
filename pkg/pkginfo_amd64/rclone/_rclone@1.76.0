@@ -1,0 +1,4 @@
+sha256: "4f5835733d52b818340f97b1fc0348a70461534d123363a183ca2b660219595a"
+file: "rclone-v1.76.0-osx-amd64.zip"
+url: "https://github.com/rclone/rclone/releases/download/v1.76.0/rclone-v1.76.0-osx-amd64.zip"
+min_os: "26.0"

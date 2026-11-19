@@ -1,0 +1,5 @@
+des: "Like cURL, but for gRPC"
+hom: "https://github.com/fullstorydev/grpcurl"
+lic: "MIT"
+aut: "fullstorydev"
+bin_name: "grpcurl"

@@ -1,0 +1,4 @@
+sha256: "a8c2a708dbae89dc7c05ba7b0beafc95bd8d09ab4a3505467b77d32ebf364dc6"
+file: "gh_2.104.0_macOS_amd64.zip"
+url: "https://github.com/cli/cli/releases/download/v2.104.0/gh_2.104.0_macOS_amd64.zip"
+min_os: "13.0"

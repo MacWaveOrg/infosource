@@ -1,0 +1,5 @@
+des: "A simple zero-config tool to make locally trusted development certificates"
+hom: "https://mkcert.dev"
+lic: "BSD-3-Clause"
+aut: "FiloSottile"
+bin_name: "mkcert"

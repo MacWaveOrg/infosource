@@ -1,0 +1,5 @@
+des: "Declaratively manage your cloud infrastructure"
+hom: "https://opentofu.org"
+lic: "MPL-2.0"
+aut: "opentofu"
+bin_name: "tofu"

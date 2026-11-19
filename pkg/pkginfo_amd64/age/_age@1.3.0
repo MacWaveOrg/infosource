@@ -1,0 +1,4 @@
+sha256: "d4901f105731bdedb19cb70b5608f7c8db09349dd0b57017cef8c48a31819462"
+file: "age-v1.3.0-darwin-amd64.tar.gz"
+url: "https://github.com/FiloSottile/age/releases/download/v1.3.0/age-v1.3.0-darwin-amd64.tar.gz"
+min_os: "12.0"

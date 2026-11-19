@@ -1,0 +1,4 @@
+sha256: "8fe52ea2bfe829c1c733d66b82683346795b0f36baa7dbc52961da8f3b82eaca"
+file: "vhs_0.12.0_Darwin_arm64.tar.gz"
+url: "https://github.com/charmbracelet/vhs/releases/download/v0.12.0/vhs_0.12.0_Darwin_arm64.tar.gz"
+min_os: "13.0"

@@ -1,0 +1,4 @@
+sha256: "9817c57a21644b51dc8b23a98a13c686f8a7f2de945b3adc61b8141991dd65a2"
+file: "doggo-darwin-aarch64.tar.gz"
+url: "https://github.com/mr-karan/doggo/releases/download/v1.4.0/doggo-darwin-aarch64.tar.gz"
+min_os: "12.0"
