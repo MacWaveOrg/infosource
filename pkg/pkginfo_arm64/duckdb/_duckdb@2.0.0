@@ -1,0 +1,4 @@
+sha256: "188a36fe8883ef52e69165a0cbb6031ef679c8e6c448a1ce22951964149b7f96"
+file: "duckdb-cli-osx-arm64.tar.gz"
+url: "https://github.com/duckdb/duckdb/releases/download/v2.0.0/duckdb-cli-osx-arm64.tar.gz"
+min_os: "11.0"

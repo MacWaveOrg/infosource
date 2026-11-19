@@ -1,0 +1,4 @@
+sha256: "e1fd0d0a7c93428cc4eaf61a0bdb26f0a50d4401283458c1182d3dcc6fb9b234"
+file: "mise-v2026.9.18-macos-x64.tar.gz"
+url: "https://github.com/jdx/mise/releases/download/v2026.9.18/mise-v2026.9.18-macos-x64.tar.gz"
+min_os: "12.0"

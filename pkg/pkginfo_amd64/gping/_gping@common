@@ -1,0 +1,5 @@
+des: "Ping, but with a graph"
+hom: "https://github.com/orf/gping"
+lic: "MIT"
+aut: "orf"
+bin_name: "gping"

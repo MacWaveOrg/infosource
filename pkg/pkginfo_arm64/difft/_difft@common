@@ -1,0 +1,5 @@
+des: "A structural diff that understands syntax"
+hom: "https://difftastic.wilfred.me.uk/"
+lic: "MIT"
+aut: "Wilfred Hughes"
+bin_name: "difft"

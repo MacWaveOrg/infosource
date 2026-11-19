@@ -1,0 +1,4 @@
+sha256: "d0206c60fb5e7c6a9b727968aec847a3b0eb206f1f763c6c784324288114e732"
+file: "gping-macOS-x86_64.tar.gz"
+url: "https://github.com/orf/gping/releases/download/gping-v1.21.0/gping-macOS-x86_64.tar.gz"
+min_os: "10.12"

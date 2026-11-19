@@ -1,0 +1,4 @@
+sha256: "774236e3247e48d78078c0bce79e5327d4e4479f1a94c8487827f178197ee39b"
+file: "mise-v2026.10.25-macos-arm64.tar.gz"
+url: "https://github.com/jdx/mise/releases/download/v2026.10.25/mise-v2026.10.25-macos-arm64.tar.gz"
+min_os: "12.0"

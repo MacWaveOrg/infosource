@@ -1,0 +1,5 @@
+des: "A terminal workspace with batteries included"
+hom: "https://zellij.dev"
+lic: "MIT"
+aut: "zellij-org"
+bin_name: "zellij"

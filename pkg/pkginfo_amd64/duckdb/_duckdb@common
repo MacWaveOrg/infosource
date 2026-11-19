@@ -1,0 +1,5 @@
+des: "An embeddable SQL OLAP database management system"
+hom: "https://duckdb.org"
+lic: "MIT"
+aut: "duckdb"
+bin_name: "duckdb"

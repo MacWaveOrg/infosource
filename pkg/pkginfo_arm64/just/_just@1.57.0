@@ -1,0 +1,4 @@
+sha256: "0381db216c2f97ce31d838a1562c1064dfbfa73f5a8a81581338a2cd9217df47"
+file: "just-1.57.0-aarch64-apple-darwin.tar.gz"
+url: "https://github.com/casey/just/releases/download/1.57.0/just-1.57.0-aarch64-apple-darwin.tar.gz"
+min_os: "11.0"

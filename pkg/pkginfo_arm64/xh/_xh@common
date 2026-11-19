@@ -1,0 +1,5 @@
+des: "A friendly and fast tool for sending HTTP requests"
+hom: "https://github.com/ducaale/xh"
+lic: "MIT"
+aut: "ducaale"
+bin_name: "xh"

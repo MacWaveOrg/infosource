@@ -1,0 +1,5 @@
+des: "A handy way to save and run project-specific commands"
+hom: "https://just.systems"
+lic: "CC0-1.0"
+aut: "Casey Rodarmor"
+bin_name: "just"

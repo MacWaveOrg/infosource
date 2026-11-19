@@ -1,0 +1,4 @@
+sha256: "70bb2bcf57d8af862a54e2d12f2fddceefb9aa4ba3783e9a4dcbf2a8e64aacb3"
+file: "yazi-x86_64-apple-darwin.zip"
+url: "https://github.com/sxyazi/yazi/releases/download/v26.8.15/yazi-x86_64-apple-darwin.zip"
+min_os: "10.12"

@@ -1,0 +1,4 @@
+sha256: "31472d5cc1d40444beb697b58e6cf83febb3c7741df4007c3039952ffc1c36c6"
+file: "difft-0.72.0-x86_64-apple-darwin.tar.gz"
+url: "https://github.com/Wilfred/difftastic/releases/download/0.72.0/difft-0.72.0-x86_64-apple-darwin.tar.gz"
+min_os: "10.12"

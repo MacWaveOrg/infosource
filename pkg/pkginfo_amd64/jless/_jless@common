@@ -1,0 +1,5 @@
+des: "A command-line JSON viewer"
+hom: "https://jless.io"
+lic: "MIT"
+aut: "Paul Julius Martinez"
+bin_name: "jless"

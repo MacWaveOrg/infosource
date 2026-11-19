@@ -1,0 +1,4 @@
+sha256: "9061a06d93490f97b3a956e149d8ec4c9030625f764e8dbfac9b737c00bd9ea0"
+file: "gping-macOS-arm64.tar.gz"
+url: "https://github.com/orf/gping/releases/download/gping-v1.21.0/gping-macOS-arm64.tar.gz"
+min_os: "11.0"
