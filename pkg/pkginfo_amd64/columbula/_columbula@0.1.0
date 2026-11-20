@@ -1,0 +1,4 @@
+sha256: "e9d2507e60bc79d2c63e63edb3db6037c1a42bc9cd98226b3480280e3ae4118d"
+file: "Columbula-macOS-amd64"
+url: "https://github.com/Sha0huaZhang/Columbula/releases/download/v0.1.0/Columbula-macOS-amd64"
+min_os: "12.0"
