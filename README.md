@@ -83,6 +83,7 @@ This list is mirrored in `MacWaveOrg/MacWave`'s two READMEs and on [macwave.org]
 
 ```
 age              by FiloSottile
+aria2c           by Tatsuhiro Tsujikawa
 atuin            by atuinsh
 bat              by David Peter
 batt             by charlie0129
