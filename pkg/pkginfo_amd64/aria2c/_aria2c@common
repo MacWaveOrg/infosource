@@ -1,0 +1,5 @@
+bin_name: "aria2c"
+des: "aria2 - The ultra fast download utility"
+hom: "https://aria2.github.io/"
+lic: "GPL-2.0-or-later"
+aut: "Tatsuhiro Tsujikawa"

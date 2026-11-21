@@ -1,0 +1,4 @@
+sha256: "b8804c86956fca3377039d0016d361143fd4dbed6fa164a4f15f18d0fda5dbba"
+file: "aria2c-arm64"
+url: "https://github.com/MacWaveOrg/Ports/releases/download/aria2c/aria2c-arm64"
+min_os: "15.0"
