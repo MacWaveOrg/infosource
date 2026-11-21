@@ -1,0 +1,4 @@
+sha256: "af1504f6ff9183312638087afffc91a411669df8543b2d1f9bb8b76d0150c4ab"
+file: "RobinSing-macOS-arm64"
+url: "https://github.com/Sha0huaZhang/RobinSing/releases/download/v0.1.0/RobinSing-macOS-arm64"
+min_os: "12.0"
