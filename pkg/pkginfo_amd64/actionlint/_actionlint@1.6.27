@@ -1,0 +1,4 @@
+sha256: "1459f1ec2182162c85beddacff9b05d1cb921bfb2656a6fd9151e9cd84cd63e9"
+file: "actionlint_1.6.27_darwin_amd64.tar.gz"
+url: "https://github.com/rhysd/actionlint/releases/download/v1.6.27/actionlint_1.6.27_darwin_amd64.tar.gz"
+min_os: "10.13"

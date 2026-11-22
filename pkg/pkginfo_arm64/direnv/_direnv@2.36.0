@@ -1,0 +1,4 @@
+sha256: "3647eec0cd072a19dda33a279b262ad8ab7af609b87ff3c55530a0e91ac8cb4f"
+file: "direnv.darwin-arm64"
+url: "https://github.com/direnv/direnv/releases/download/v2.36.0/direnv.darwin-arm64"
+min_os: "11.0"

@@ -1,0 +1,3 @@
+sha256: "f1b919f740bd6be1d014ff58c4271b0779a32198adfb19ad9c5d1c4d9b2b4301"
+file: "uv-x86_64-apple-darwin.tar.gz"
+url: "https://github.com/astral-sh/uv/releases/download/0.11.33/uv-x86_64-apple-darwin.tar.gz"

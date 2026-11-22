@@ -1,0 +1,5 @@
+des: "A feature-rich command-line audio/video downloader"
+hom: "https://github.com/yt-dlp/yt-dlp"
+lic: "Unlicense"
+aut: "yt-dlp"
+bin_name: "yt-dlp"

@@ -1,0 +1,5 @@
+des: "The Kubernetes package manager"
+hom: "https://helm.sh"
+lic: "Apache-2.0"
+aut: "helm"
+bin_name: "helm"

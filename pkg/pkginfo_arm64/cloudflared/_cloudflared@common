@@ -1,0 +1,5 @@
+des: "Cloudflare Tunnel client, exposing local services through a secure tunnel"
+hom: "https://github.com/cloudflare/cloudflared"
+lic: "Apache-2.0"
+aut: "cloudflare"
+bin_name: "cloudflared"

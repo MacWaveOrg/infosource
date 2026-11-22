@@ -1,0 +1,5 @@
+des: "An extremely fast Python package and project manager"
+hom: "https://docs.astral.sh/uv"
+lic: "Apache-2.0 OR MIT"
+aut: "astral-sh"
+bin_name: "uv"

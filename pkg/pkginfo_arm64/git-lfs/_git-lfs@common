@@ -1,0 +1,5 @@
+des: "Git extension for versioning large files"
+hom: "https://git-lfs.com"
+lic: "MIT"
+aut: "git-lfs"
+bin_name: "git-lfs"

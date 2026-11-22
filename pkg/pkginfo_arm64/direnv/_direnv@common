@@ -1,0 +1,5 @@
+des: "Load and unload environment variables depending on the current directory"
+hom: "https://direnv.net"
+lic: "MIT"
+aut: "direnv"
+bin_name: "direnv"
