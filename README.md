@@ -113,6 +113,7 @@ fileicon         by Michael Klement
 fx               by antonmedv
 fzf              by Junegunn Choi
 gh               by cli
+git              by Git community
 gitleaks         by gitleaks
 glow             by charmbracelet
 gping            by orf
@@ -121,7 +122,7 @@ htop             by Hisham Muhammad and the htop team
 hyperfine        by sharkdp
 ipsw             by blacktop
 jless            by Paul Julius Martinez
-jq               by Stephen Dolan, Nicolas Williams, William Langford, Owen Ou, itchyny, Mattias Wadman, Emanuele Torre, Asaf Meizner, avid Korczynski, et al.
+jq               by Stephen Dolan, Nicolas Williams, et al.
 just             by Casey Rodarmor
 k9s              by derailed
 kubectx          by ahmetb
@@ -145,7 +146,7 @@ stern            by stern
 taskwarrior-tui  by kdheepak
 tmux             by Nicholas Marriott and contributors
 tofu             by opentofu
-tree             by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro
+tree             by Steve Baker, Thomas Moore, et al.
 trollrestore     by JJTech (@JJTech0130)
 typst            by typst
 vhs              by charmbracelet

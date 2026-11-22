@@ -1,0 +1,5 @@
+des: "Fast, scalable, distributed version control system"
+hom: "https://git-scm.com"
+lic: "GPL-2.0-only"
+aut: "Git community"
+bin_name: "git"
