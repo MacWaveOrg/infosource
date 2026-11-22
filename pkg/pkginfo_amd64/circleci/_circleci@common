@@ -1,0 +1,5 @@
+des: "Command-line interface for CircleCI"
+hom: "https://circleci.com/docs/local-cli/"
+lic: "MIT"
+aut: "CircleCI"
+bin_name: "circleci"

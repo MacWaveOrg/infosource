@@ -1,0 +1,5 @@
+sha256: "620c9f0dc10849f94728ab5df52d225ebab8187439dd6fee1925e59e80dff892"
+file: "xcodegen.zip"
+url: "https://github.com/yonaskolb/XcodeGen/releases/download/2.48.0/xcodegen.zip"
+install: "tree"
+min_os: "14.0"

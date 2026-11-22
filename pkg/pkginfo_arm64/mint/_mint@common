@@ -1,0 +1,5 @@
+des: "Package manager that builds and runs Swift packages"
+hom: "https://github.com/yonaskolb/Mint"
+lic: "MIT"
+aut: "Yonas Kolb"
+bin_name: "mint"

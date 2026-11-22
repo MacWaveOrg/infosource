@@ -1,0 +1,4 @@
+sha256: "376cbae670be59ee64f398de20e0694ec434bf8a9b842642952b0ab0be5f3961"
+file: "scc_Darwin_arm64.tar.gz"
+url: "https://github.com/boyter/scc/releases/download/v3.7.0/scc_Darwin_arm64.tar.gz"
+min_os: "12.0"

@@ -1,0 +1,4 @@
+sha256: "1dbce19c302498b74230b26cc44f774bd37ca571fd6d6510155caef067c86135"
+file: "circleci-cli_1.17.0_darwin_arm64.tar.gz"
+url: "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.17.0/circleci-cli_1.17.0_darwin_arm64.tar.gz"
+min_os: "13.0"

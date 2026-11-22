@@ -1,0 +1,4 @@
+sha256: "3af68b124052da7fc2a246c96b0bea6a68bfee389baa788f4cead1a133445586"
+file: "7z2606-mac-x64.tar.xz"
+url: "https://github.com/ip7z/7zip/releases/download/26.06/7z2606-mac-x64.tar.xz"
+min_os: "10.15"

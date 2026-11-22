@@ -1,0 +1,5 @@
+des: "Generate Xcode projects from a YAML spec and your project's folder structure"
+hom: "https://github.com/yonaskolb/XcodeGen"
+lic: "MIT"
+aut: "Yonas Kolb"
+bin_name: "xcodegen"

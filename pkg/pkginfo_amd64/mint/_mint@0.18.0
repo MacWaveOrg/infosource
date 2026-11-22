@@ -1,0 +1,4 @@
+sha256: "ce44b0fc4ef3bc854ea43b2d2d3f96502d52231c0e0849ec212815121955f5ef"
+file: "mint.zip"
+url: "https://github.com/yonaskolb/Mint/releases/download/0.18.0/mint.zip"
+min_os: "11.0"

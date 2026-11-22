@@ -1,0 +1,5 @@
+des: "File archiver with a high compression ratio (7-Zip for POSIX systems)"
+hom: "https://7-zip.org"
+lic: "LGPL-2.1-or-later"
+aut: "Igor Pavlov"
+bin_name: "7zz"

@@ -1,0 +1,5 @@
+des: "Fast code counter with complexity calculations and COCOMO estimates"
+hom: "https://github.com/boyter/scc"
+lic: "MIT"
+aut: "Ben Boyter"
+bin_name: "scc"
