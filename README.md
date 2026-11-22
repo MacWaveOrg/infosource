@@ -21,7 +21,7 @@ MacWave itself lives in `MacWaveOrg/MacWave`. This repository carries
 
 ```
 pkg/pkginfo_{arch}/{name}/_{name}@common             bin_name / des / hom / lic / aut
-pkg/pkginfo_{arch}/{name}/_{name}@{version}          url / sha256 / deps
+pkg/pkginfo_{arch}/{name}/_{name}@{version}          url / sha256 / file / [install] / deps
 
 deps/depsinfo_{arch}/{name}/_{name}@common           dep_name / des / hom / lic / aut
 deps/depsinfo_{arch}/{name}/_{name}@{version}        url / sha256 / deps
@@ -33,6 +33,16 @@ deps/depsinfo_{arch}/{name}/_{name}@{version}        url / sha256 / deps
 - `sha256` is verified before anything is extracted.
 - `deps` lists one `name@version` per line, written as a quoted multi-line
   list. A package without a `deps` field has no dependencies.
+- `install` is optional and only appears on version records:
+
+  | value | meaning |
+  | --- | --- |
+  | *(absent)* or `"binary"` | the payload holds one executable; it is installed as `bin/{name}@{version}/{name}` |
+  | `"tree"` | the payload is a whole directory tree (for example `bin/`, `libexec/`, `share/`); it is installed as `bin/{name}@{version}/` and only `bin/{name}` is linked |
+
+  A missing `install` field means a normal single-executable package, so every
+  record written before this field existed keeps working unchanged. `tree` is
+  meant for packages upstream cannot ship as one file — `git` is the first one.
 
 # 🌊 Automatic Package Updates
 

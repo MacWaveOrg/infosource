@@ -72,6 +72,12 @@ def validate(path: Path) -> list[str]:
     # 存在，却谁都装不上（client 会报 "No file field for <name>@<version>"）。
     if not fields.get("file"):
         errors.append(f"{relative}: missing the file field")
+
+    # install 是可选的：缺省即普通软件包（只取一个可执行文件）。
+    # 写错值比不写更危险 —— 客户端会直接拒绝安装，所以这里先拦下。
+    install = fields.get("install")
+    if install is not None and install not in ("binary", "tree"):
+        errors.append(f'{relative}: install must be "binary" or "tree", got {install!r}')
     return errors
 
 

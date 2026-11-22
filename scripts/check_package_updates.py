@@ -200,6 +200,12 @@ def is_dependency_record(fields: dict[str, str]) -> bool:
     return "deps" in fields
 
 
+def is_tree_record(fields: dict[str, str]) -> bool:
+    # install: "tree" = 整树软件包（自建包常见）。自动更新只会生成单文件记录，
+    # 那会把 install 丢掉、把整树当单二进制装，所以这类记录一律不动。
+    return fields.get("install") == "tree"
+
+
 def report_text(updates: list[dict[str, str]], skipped: list[str]) -> str:
     if updates:
         lines = ["## Candidate package updates", ""]
@@ -248,6 +254,9 @@ def discover_updates(root: Path) -> tuple[list[dict[str, str]], list[str]]:
                 continue
             if is_dependency_record(fields):
                 skipped.append(f"`{package}` ({arch}): dependency metadata needs manual review")
+                continue
+            if is_tree_record(fields):
+                skipped.append(f"`{package}` ({arch}): tree package needs manual review")
                 continue
 
             common_path = package_dir / f"_{package}@common"
