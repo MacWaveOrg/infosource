@@ -1,0 +1,4 @@
+sha256: "76600dde10a286e4038b9872d93dd4b735c9fe7951d1af456a39213c7cd407f2"
+file: "tar-arm64"
+url: "https://github.com/MacWaveOrg/Ports/releases/download/tar/tar-arm64"
+min_os: "11.0"

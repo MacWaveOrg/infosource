@@ -1,0 +1,5 @@
+des: "Data recovery: TestDisk repairs partitions, PhotoRec recovers files"
+hom: "https://www.cgsecurity.org/wiki/TestDisk"
+lic: "GPL-2.0-or-later"
+aut: "Christophe Grenier"
+bin_name: "testdisk"

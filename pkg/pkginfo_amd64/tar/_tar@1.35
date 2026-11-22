@@ -1,0 +1,4 @@
+sha256: "0f2587044d9528623a7700bfbe2c4c32381e389b2aaaf78afcca02e9cbc0c1bf"
+file: "tar-x86_64"
+url: "https://github.com/MacWaveOrg/Ports/releases/download/tar/tar-x86_64"
+min_os: "11.0"

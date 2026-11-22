@@ -1,0 +1,5 @@
+des: "Device Tree Compiler and the fdt tooling around it"
+hom: "https://git.kernel.org/pub/scm/utils/dtc/dtc.git"
+lic: "GPL-2.0-or-later"
+aut: "Device Tree Compiler contributors"
+bin_name: "dtc"
