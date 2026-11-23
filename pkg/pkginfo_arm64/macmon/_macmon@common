@@ -1,0 +1,5 @@
+des: "Sudoless performance monitor for Apple Silicon (CPU/GPU/ANE power and temps)"
+hom: "https://github.com/vladkens/macmon"
+lic: "MIT"
+aut: "Vlad Kens"
+bin_name: "macmon"

@@ -1,0 +1,5 @@
+des: "A new type of shell: structured data pipelines instead of text"
+hom: "https://www.nushell.sh"
+lic: "MIT"
+aut: "Nushell contributors"
+bin_name: "nu"

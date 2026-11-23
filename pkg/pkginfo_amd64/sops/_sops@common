@@ -1,0 +1,5 @@
+des: "Simple and flexible tool for managing secrets (encrypted YAML/JSON/ENV)"
+hom: "https://getsops.io"
+lic: "MPL-2.0"
+aut: "getsops"
+bin_name: "sops"

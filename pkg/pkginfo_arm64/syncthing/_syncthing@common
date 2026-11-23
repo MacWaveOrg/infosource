@@ -1,0 +1,5 @@
+des: "Continuous file synchronization between devices"
+hom: "https://syncthing.net"
+lic: "MPL-2.0"
+aut: "Syncthing contributors"
+bin_name: "syncthing"

@@ -1,0 +1,5 @@
+des: "Pretty fancy terminal file manager (Superfile)"
+hom: "https://superfile.dev"
+lic: "MIT"
+aut: "yorukot"
+bin_name: "spf"

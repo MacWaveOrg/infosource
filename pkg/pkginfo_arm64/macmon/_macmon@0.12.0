@@ -1,0 +1,4 @@
+sha256: "cd5a701f8537072aee93eba686bc582897bd00d826f62146b32c8a8d2654641a"
+file: "macmon-v0.12.0-aarch64-apple-darwin.tar.gz"
+url: "https://github.com/vladkens/macmon/releases/download/v0.12.0/macmon-v0.12.0-aarch64-apple-darwin.tar.gz"
+min_os: "11.0"
