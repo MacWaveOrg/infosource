@@ -1,0 +1,4 @@
+sha256: "b7f694ad19c1cf168388f3295a5e825425f7dac5cd27cffd2d89a51ed4ab0f22"
+file: "watchexec-2.8.0-x86_64-apple-darwin.tar.xz"
+url: "https://github.com/watchexec/watchexec/releases/download/v2.8.0/watchexec-2.8.0-x86_64-apple-darwin.tar.xz"
+min_os: "10.12"

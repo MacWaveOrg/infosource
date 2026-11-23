@@ -1,0 +1,4 @@
+sha256: "a3f1cac7c5678f01661a92212f58480ae3b0634115d880dbc59e2953ded45667"
+file: "tectonic-0.17.0-aarch64-apple-darwin.tar.gz"
+url: "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.17.0/tectonic-0.17.0-aarch64-apple-darwin.tar.gz"
+min_os: "11.0"

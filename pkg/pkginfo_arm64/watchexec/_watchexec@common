@@ -1,0 +1,5 @@
+des: "Run commands when files change"
+hom: "https://watchexec.github.io"
+lic: "Apache-2.0"
+aut: "Watchexec contributors"
+bin_name: "watchexec"

@@ -1,0 +1,5 @@
+des: "Community-maintained help pages for command-line tools (tealdeer client)"
+hom: "https://tealdeer-rs.github.io/tealdeer/"
+lic: "Apache-2.0"
+aut: "tealdeer-rs"
+bin_name: "tldr"

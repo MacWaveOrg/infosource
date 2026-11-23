@@ -1,0 +1,5 @@
+des: "Modernized, complete, self-contained TeX/LaTeX engine"
+hom: "https://tectonic-typesetting.github.io"
+lic: "MIT"
+aut: "Tectonic contributors"
+bin_name: "tectonic"

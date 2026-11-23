@@ -1,0 +1,5 @@
+des: "Extremely fast Python type checker and language server (Astral)"
+hom: "https://docs.astral.sh/ty/"
+lic: "MIT"
+aut: "Astral"
+bin_name: "ty"
