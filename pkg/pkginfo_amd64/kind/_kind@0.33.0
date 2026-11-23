@@ -1,0 +1,4 @@
+sha256: "5a99f26f57246dc9319dd294803313197a0f34d33c525b3ea8b655db5916ece0"
+file: "kind-darwin-amd64"
+url: "https://github.com/kubernetes-sigs/kind/releases/download/v0.33.0/kind-darwin-amd64"
+min_os: "12.0"

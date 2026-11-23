@@ -1,0 +1,5 @@
+des: "Customize Kubernetes YAML without templates"
+hom: "https://kustomize.io"
+lic: "Apache-2.0"
+aut: "Kubernetes SIG CLI"
+bin_name: "kustomize"

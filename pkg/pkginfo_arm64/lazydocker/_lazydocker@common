@@ -1,0 +1,5 @@
+des: "Terminal UI for docker and docker-compose"
+hom: "https://github.com/jesseduffield/lazydocker"
+lic: "MIT"
+aut: "Jesse Duffield"
+bin_name: "lazydocker"

@@ -1,0 +1,4 @@
+sha256: "7e72064b0346761589b7ecc230710fc22707ca775b7a177ae27e87f0295db957"
+file: "kubecolor_0.9.0_darwin_amd64.tar.gz"
+url: "https://github.com/kubecolor/kubecolor/releases/download/v0.9.0/kubecolor_0.9.0_darwin_amd64.tar.gz"
+min_os: "13.0"

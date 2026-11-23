@@ -1,0 +1,5 @@
+des: "Colorize kubectl output"
+hom: "https://kubecolor.github.io"
+lic: "MIT"
+aut: "kubecolor"
+bin_name: "kubecolor"

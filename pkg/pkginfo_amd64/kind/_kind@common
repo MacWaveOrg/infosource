@@ -1,0 +1,5 @@
+des: "Run local Kubernetes clusters using Docker containers as nodes"
+hom: "https://kind.sigs.k8s.io"
+lic: "Apache-2.0"
+aut: "Kubernetes SIG Testing"
+bin_name: "kind"

@@ -1,0 +1,5 @@
+des: "Fast and powerful Git hooks manager"
+hom: "https://lefthook.dev"
+lic: "MIT"
+aut: "Evil Martians"
+bin_name: "lefthook"
