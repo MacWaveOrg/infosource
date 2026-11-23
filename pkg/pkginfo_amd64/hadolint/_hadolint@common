@@ -1,0 +1,5 @@
+des: "Dockerfile linter with shellcheck built in"
+hom: "https://hadolint.github.io/hadolint/"
+lic: "GPL-3.0-or-later"
+aut: "Hadolint"
+bin_name: "hadolint"

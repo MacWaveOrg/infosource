@@ -1,0 +1,5 @@
+des: "Jujutsu: a Git-compatible VCS that is both simple and powerful"
+hom: "https://jj-vcs.github.io/jj/"
+lic: "Apache-2.0"
+aut: "Jujutsu contributors"
+bin_name: "jj"
