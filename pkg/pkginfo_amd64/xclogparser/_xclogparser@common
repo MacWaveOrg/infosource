@@ -1,0 +1,5 @@
+des: "Parse Xcode and xcodebuild logs stored in the xcactivitylog format"
+hom: "https://github.com/MobileNativeFoundation/XCLogParser"
+lic: "Apache-2.0"
+aut: "MobileNativeFoundation"
+bin_name: "xclogparser"

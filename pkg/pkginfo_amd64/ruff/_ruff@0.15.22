@@ -1,0 +1,3 @@
+sha256: "687a9ceb88ab85dab061026d5017218225a481121b1a40862cc8f92b56f18090"
+file: "ruff-x86_64-apple-darwin.tar.gz"
+url: "https://github.com/astral-sh/ruff/releases/download/0.15.22/ruff-x86_64-apple-darwin.tar.gz"

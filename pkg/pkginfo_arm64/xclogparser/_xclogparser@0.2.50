@@ -1,0 +1,4 @@
+sha256: "450efaa1925c063c244c06129663eafbe68caca8ad59fd214fc45db12803ed62"
+file: "XCLogParser-macOS-arm64-v0.2.50.zip"
+url: "https://github.com/MobileNativeFoundation/XCLogParser/releases/download/v0.2.50/XCLogParser-macOS-arm64-v0.2.50.zip"
+min_os: "11.0"

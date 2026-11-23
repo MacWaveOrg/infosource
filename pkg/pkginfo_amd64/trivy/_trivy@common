@@ -1,0 +1,5 @@
+des: "A comprehensive and versatile security scanner"
+hom: "https://trivy.dev"
+lic: "Apache-2.0"
+aut: "aquasecurity"
+bin_name: "trivy"

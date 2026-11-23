@@ -1,0 +1,5 @@
+des: "Manage your dotfiles across multiple machines, securely"
+hom: "https://chezmoi.io"
+lic: "MIT"
+aut: "twpayne"
+bin_name: "chezmoi"

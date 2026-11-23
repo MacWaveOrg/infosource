@@ -1,0 +1,5 @@
+des: "Vim-fork focused on extensibility and usability"
+hom: "https://neovim.io"
+lic: "Apache-2.0"
+aut: "neovim"
+bin_name: "nvim"

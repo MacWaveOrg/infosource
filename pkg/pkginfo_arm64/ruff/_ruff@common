@@ -1,0 +1,5 @@
+des: "An extremely fast Python linter and code formatter"
+hom: "https://docs.astral.sh/ruff"
+lic: "MIT"
+aut: "astral-sh"
+bin_name: "ruff"

@@ -1,0 +1,5 @@
+des: "Command line tools for fly.io services"
+hom: "https://fly.io"
+lic: "Apache-2.0"
+aut: "superfly"
+bin_name: "flyctl"

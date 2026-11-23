@@ -1,0 +1,5 @@
+des: "A fast Kubernetes manifests validator, with support for Custom Resources"
+hom: "https://github.com/yannh/kubeconform"
+lic: "Apache-2.0"
+aut: "yannh"
+bin_name: "kubeconform"

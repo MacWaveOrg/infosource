@@ -1,0 +1,3 @@
+sha256: "472816f6888dda689d075c30254d4210b4d1035acf365aa72332f584c2f60485"
+file: "trivy_0.74.0_macOS-64bit.tar.gz"
+url: "https://github.com/aquasecurity/trivy/releases/download/v0.74.0/trivy_0.74.0_macOS-64bit.tar.gz"

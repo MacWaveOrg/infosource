@@ -1,0 +1,4 @@
+sha256: "b5d32b2cb77f9c781c976b20a85e2d0bc8f9184d5d1cfe665a2f31a19f99eeb9"
+file: "kubeconform-darwin-arm64.tar.gz"
+url: "https://github.com/yannh/kubeconform/releases/download/v0.7.0/kubeconform-darwin-arm64.tar.gz"
+min_os: "11.0"

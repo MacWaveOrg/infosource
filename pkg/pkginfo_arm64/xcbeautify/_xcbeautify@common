@@ -1,0 +1,5 @@
+des: "A little beautifier tool for xcodebuild"
+hom: "https://github.com/cpisciotta/xcbeautify"
+lic: "MIT"
+aut: "cpisciotta"
+bin_name: "xcbeautify"
