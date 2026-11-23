@@ -1,0 +1,5 @@
+des: "Run your GitHub Actions locally"
+hom: "https://github.com/nektos/act"
+lic: "MIT"
+aut: "nektos"
+bin_name: "act"

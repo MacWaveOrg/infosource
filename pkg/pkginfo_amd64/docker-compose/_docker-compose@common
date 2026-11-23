@@ -1,0 +1,5 @@
+des: "Define and run multi-container applications with Docker"
+hom: "https://docs.docker.com/compose/"
+lic: "Apache-2.0"
+aut: "Docker"
+bin_name: "docker-compose"

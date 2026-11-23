@@ -1,0 +1,4 @@
+sha256: "6a7f5e32fc2c272256ad5c77aa8aaede02e1e86cf3ba4715acb894d3d6d5b361"
+file: "bottom_x86_64-apple-darwin.tar.gz"
+url: "https://github.com/ClementTsang/bottom/releases/download/0.15.0/bottom_x86_64-apple-darwin.tar.gz"
+min_os: "10.12"

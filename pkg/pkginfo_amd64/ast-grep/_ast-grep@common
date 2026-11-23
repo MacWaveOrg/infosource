@@ -1,0 +1,5 @@
+des: "Code structural search, lint and rewriting (tree-sitter based)"
+hom: "https://ast-grep.github.io"
+lic: "MIT"
+aut: "ast-grep"
+bin_name: "ast-grep"

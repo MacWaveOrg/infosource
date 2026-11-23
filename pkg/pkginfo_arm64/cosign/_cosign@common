@@ -1,0 +1,5 @@
+des: "Container signing, verification and supply chain security"
+hom: "https://docs.sigstore.dev"
+lic: "Apache-2.0"
+aut: "Sigstore"
+bin_name: "cosign"

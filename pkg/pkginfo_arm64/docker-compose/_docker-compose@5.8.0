@@ -1,0 +1,4 @@
+sha256: "008b8fcf6c6d60340f5796626a0f0d51c042085793a9b1653343011727140b71"
+file: "docker-compose-darwin-aarch64"
+url: "https://github.com/docker/compose/releases/download/v5.8.0/docker-compose-darwin-aarch64"
+min_os: "11.0"

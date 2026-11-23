@@ -1,0 +1,4 @@
+sha256: "14477d7e076b12a885c54301beff2b524a905e4238a2b3ec9b3d1fd0efdc100f"
+file: "act_Darwin_arm64.tar.gz"
+url: "https://github.com/nektos/act/releases/download/v0.2.98/act_Darwin_arm64.tar.gz"
+min_os: "12.0"
