@@ -1,0 +1,5 @@
+des: "Smart and user-friendly command line shell (fish 4, Rust rewrite)"
+hom: "https://fishshell.com"
+lic: "GPL-2.0-only"
+aut: "fish-shell contributors"
+bin_name: "fish"
