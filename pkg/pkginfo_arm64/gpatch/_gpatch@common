@@ -1,5 +1,5 @@
-des: "Apply a diff file to an original (GNU patch)"
+des: "GNU patch (g-prefixed so the system patch keeps its name)"
 hom: "https://savannah.gnu.org/projects/patch/"
 lic: "GPL-3.0-or-later"
 aut: "Free Software Foundation"
-bin_name: "patch"
+bin_name: "gpatch"

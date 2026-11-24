@@ -1,5 +1,5 @@
-des: "GNU archiver: create and extract tar archives"
+des: "GNU archiver (g-prefixed so the system bsdtar keeps its name)"
 hom: "https://www.gnu.org/software/tar/"
 lic: "GPL-3.0-or-later"
 aut: "Free Software Foundation"
-bin_name: "tar"
+bin_name: "gtar"

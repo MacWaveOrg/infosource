@@ -1,5 +1,5 @@
-des: "GNU Bourne-Again SHell (macOS ships 3.2, this is 5.3)"
+des: "GNU Bourne-Again SHell 5.3 (g-prefixed so /bin/bash 3.2 keeps its name)"
 hom: "https://www.gnu.org/software/bash/"
 lic: "GPL-3.0-or-later"
 aut: "Free Software Foundation"
-bin_name: "bash"
+bin_name: "gbash"
