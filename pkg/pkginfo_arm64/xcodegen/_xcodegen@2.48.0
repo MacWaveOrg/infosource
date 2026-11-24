@@ -1,4 +1,4 @@
-sha256: "c7a5d52baabc53aa8081547c9f98833bbc16573f49d0f7625572724209cb429d"
+sha256: "72607e9f9cc2eaf38d7d783c1148acc45789676ab53b790518eafeaf04ed6959"
 file: "xcodegen-2.48.0-arm64.tar.xz"
 url: "https://github.com/MacWaveOrg/Ports/releases/download/xcodegen/xcodegen-2.48.0-arm64.tar.xz"
 install: "tree"
