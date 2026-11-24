@@ -1,4 +1,5 @@
-sha256: "9124d9aa2943d29a69e5775f98a8f7c3fbe2ad5d2fc89f14e4383189bd04d66e"
+sha256: "883f85bb4d4cda5f451a433532624914f4c10cd5e70a54e9c16f867075872f01"
 file: "aria2c-x86_64"
 url: "https://github.com/MacWaveOrg/Ports/releases/download/aria2c/aria2c-x86_64"
 min_os: "15.0"
+min_client_version: "4.6.0"

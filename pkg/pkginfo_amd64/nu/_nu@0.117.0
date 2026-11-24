@@ -1,6 +1,6 @@
-sha256: "a6fc2c8fdb4afa3bc146e6caa2ee4cfc0f01b7928b7c7cce3c1cecc294074532"
+sha256: "0469cef8001128d03fb6a74666c77a29f2614d0396c24c1375cf7f0807ee1841"
 file: "nu-0.117.0-amd64.tar.xz"
 url: "https://github.com/MacWaveOrg/Ports/releases/download/nu/nu-0.117.0-amd64.tar.xz"
 install: "tree"
 min_os: "10.12"
-min_client_version: "4.5.0"
+min_client_version: "4.6.0"

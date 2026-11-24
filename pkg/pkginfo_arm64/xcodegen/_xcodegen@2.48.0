@@ -1,6 +1,6 @@
-sha256: "7fc02a8a112b9fce85580ad1e0cbb70d84684d737bb3369196ab504dc1efb290"
+sha256: "fb6ce56d7542c4d59b20de0dcfcdd7bf0a0d0edc90cfff67037157d72c4a3c2d"
 file: "xcodegen-2.48.0-arm64.tar.xz"
 url: "https://github.com/MacWaveOrg/Ports/releases/download/xcodegen/xcodegen-2.48.0-arm64.tar.xz"
 install: "tree"
 min_os: "14.0"
-min_client_version: "4.5.0"
+min_client_version: "4.6.0"

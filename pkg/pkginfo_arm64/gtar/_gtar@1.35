@@ -1,4 +1,5 @@
-sha256: "6eb809d6f1be20e66c74ba5ada56ee41d9aab346bb12763a95f8940637419aac"
+sha256: "856bde2b08b211040d3d64957258bbf561fa2274e825f9b1ed043e8cf62ce5ce"
 file: "gtar-arm64"
 url: "https://github.com/MacWaveOrg/Ports/releases/download/gtar/gtar-arm64"
 min_os: "11.0"
+min_client_version: "4.6.0"

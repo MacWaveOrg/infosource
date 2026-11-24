@@ -1,5 +1,5 @@
-sha256: "4e4b2e94ff42109f53c403facfcbaecc55cd2313135fe25a26e47bad220762d6"
+sha256: "7815cc8dc93448bea9b4097c59964b713b16527b7ca1266ef0d68d4d75fbf726"
 file: "ChOma_amd64"
 url: "https://github.com/MacWaveOrg/Ports/releases/download/choma/ChOma_amd64"
-deps: "openssl@3.0.15"
 min_os: "10.13"
+min_client_version: "4.6.0"
