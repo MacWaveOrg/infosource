@@ -1,6 +1,6 @@
 sha256: "aac243e371d8ff9a6f643b4145b8aa0fd7f11a2c0c43a5c95e2bc7f1b69b5e53"
-file: "gwget-amd64.tar.bz2"
-url: "https://github.com/MacWaveOrg/Ports/releases/download/gwget/gwget-amd64.tar.bz2"
+file: "gwget-1.25.0-1-amd64.tar.bz2"
+url: "https://github.com/MacWaveOrg/Ports/releases/download/gwget/gwget-1.25.0-1-amd64.tar.bz2"
 deps: "gettext@0.21.0"
       "libiconv@1.16"
       "libidn2@2.3.8"
