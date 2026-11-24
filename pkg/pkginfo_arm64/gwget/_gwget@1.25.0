@@ -1,4 +1,4 @@
-sha256: "09ee91dc77d7cefe109634a5d6044956f305c9d34e4ded444d24500d447334d6"
+sha256: "35404e08b55c31a1c92f9eb1dc7d232a6ddddd17abafacab02aa570b008b3b37"
 file: "gwget-arm64.tar.bz2"
 url: "https://github.com/MacWaveOrg/Ports/releases/download/gwget/gwget-arm64.tar.bz2"
 deps: "gettext@0.21.0"
