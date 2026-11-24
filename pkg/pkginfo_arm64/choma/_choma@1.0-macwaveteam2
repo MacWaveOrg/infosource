@@ -1,4 +1,4 @@
-sha256: "f3244c2d6a2bdbcb675f118ee7c243219671b878dcb9f65c535654aec8a1a448"
+sha256: "24084ac081259407ac9835aaeb8454c3ff23d64cddb382afef9908d6fc0f7d28"
 file: "ChOma_arm64"
 url: "https://github.com/MacWaveOrg/Ports/releases/download/choma/ChOma_arm64"
 min_os: "11.0"
