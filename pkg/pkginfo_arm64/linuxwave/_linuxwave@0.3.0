@@ -1,0 +1,4 @@
+sha256: "98f91c74de57703e6efcd63e7ed6430d02b89711462a633e9333a69a7cb9ab0e"
+file: "linuxwave-0.3.0-aarch64-macos.tar.gz"
+url: "https://github.com/orhun/linuxwave/releases/download/v0.3.0/linuxwave-0.3.0-aarch64-macos.tar.gz"
+min_os: "13.0"
