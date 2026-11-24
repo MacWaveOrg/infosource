@@ -1,4 +1,4 @@
-sha256: "17bc2553f2aea57113178e8afe0a64fc80936d7f5be275b391ba4c1fffd548fd"
+sha256: "aac243e371d8ff9a6f643b4145b8aa0fd7f11a2c0c43a5c95e2bc7f1b69b5e53"
 file: "gwget-amd64.tar.bz2"
 url: "https://github.com/MacWaveOrg/Ports/releases/download/gwget/gwget-amd64.tar.bz2"
 deps: "gettext@0.21.0"
