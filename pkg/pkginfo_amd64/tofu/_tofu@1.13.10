@@ -1,0 +1,3 @@
+sha256: "996b3a4ea0c531e4bfc6cf7d4a819417ac119b88646dbf2a855ca8e2518b575f"
+file: "tofu_1.13.10_darwin_amd64.tar.gz"
+url: "https://github.com/opentofu/opentofu/releases/download/v1.13.10/tofu_1.13.10_darwin_amd64.tar.gz"
