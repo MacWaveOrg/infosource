@@ -1,3 +1,4 @@
-sha256: "8cc69ca3f77c9dc8bed662100046085536c6a95b77b2a964ba79fc81ba3f698a"
+sha256: "462145f65614873f83d4632dbcbd9b8b7c2c97a00ba3d737452466a36e409971"
 file: "openssl-3.0.15-h46256e1_0.tar.bz2"
 url: "https://repo.continuum.io/pkgs/main/osx-64/openssl-3.0.15-h46256e1_0.tar.bz2"
+relocated: "loader_path"
