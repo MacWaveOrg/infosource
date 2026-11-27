@@ -1,3 +1,16 @@
+> **⚠ 本仓库已归档（read-only）。**
+> **This repository is archived (read-only).**
+>
+> 1.0 起由 **Summerwave** 承接：<https://github.com/SummerwaveOrg/Summerwave>
+>
+> **对应仓 / Successor：<https://github.com/SummerwaveOrg/SeaLane>**
+> 1.0 的索引把软件包与依赖合并成单一命名空间，记录直接放在仓库根
+> （`<名>/_<名>@<版本>.<os>-<arch>`），不再有 `pkg/pkginfo` 那一层。
+>
+> 归档不影响历史内容：代码、raw 文件、Release 资产与 Pages 站点仍可访问。
+> Archiving keeps everything readable: code, raw files, release assets and the Pages site.
+
+
 # 🌊 MacWave Data
 
 The package index that MacWave reads at runtime: where every package and
